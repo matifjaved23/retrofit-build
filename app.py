@@ -184,7 +184,7 @@ def train_models():
             metadata = pickle.load(f)
             label_encoders = metadata.get("label_encoders", {})
             feature_columns = metadata.get("feature_columns", {})
-            shap_explainers = metadata.get("shap_explainers", {})
+            # shap_explainers = metadata.get("shap_explainers", {}) # Excluded due to pickling issues
             feature_importances = metadata.get("feature_importances", {})
             class_distributions = metadata.get("class_distributions", {})
             component_metrics = metadata.get("component_metrics", {})
@@ -211,7 +211,7 @@ def train_models():
     metadata = {
         "label_encoders": label_encoders,
         "feature_columns": feature_columns,
-        "shap_explainers": shap_explainers,
+        # "shap_explainers": shap_explainers, # Excluded due to pickling issues
         "feature_importances": feature_importances,
         "class_distributions": class_distributions,
         "component_metrics": component_metrics
